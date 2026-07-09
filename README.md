@@ -1,334 +1,119 @@
-# Netflix Clone — White-Label Solution by Miracuves
+# Netflix Clone — White-Label OTT & Video Streaming Platform by Miracuves
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Try_Now-e8344f?style=for-the-badge)](https://mxflix.mimeld.com)
-[![Solution Page](https://img.shields.io/badge/Solution_Page-miracuves.com-0b0b10?style=for-the-badge)](https://miracuves.com/netflix-clone/)
+[![Website](https://img.shields.io/badge/Solution_Page-miracuves.com-0b0b10?style=for-the-badge)](https://miracuves.com/netflix-clone/)
 [![Delivery](https://img.shields.io/badge/Go_Live-6_Working_Days-2ecc8f?style=for-the-badge)](https://miracuves.com/netflix-clone/#pricing)
 [![Support](https://img.shields.io/badge/Support-60_Days_+_12mo_Updates-blue?style=for-the-badge)](https://miracuves.com/facts/)
 
+**MXFlix** is a production-ready, white-label Netflix clone: a complete OTT video streaming platform with subscriptions, rentals & pay-per-view, a producer revenue-sharing panel, and a full admin dashboard — delivered with **100% source code ownership** in **6 working days**.
+
+> 🎬 **See it running before you talk to anyone.** Live user app, web OTT, producer panel, and admin dashboard — demo credentials are printed on the [solution page](https://miracuves.com/netflix-clone#demo). No sales call required.
+
 ---
 
-## Table of Contents
-
-1. [Who Is This For?](#who-is-this-for)
-2. [How It Works](#how-it-works)
-3. [Core Features](#core-features)
-4. [Architecture](#architecture)
-5. [Revenue Streams](#revenue-streams)
-6. [What's Included](#whats-included)
-7. [Deployment Timeline](#deployment-timeline)
-8. [Why Not Build From Scratch?](#why-not-build-from-scratch)
-9. [Market Opportunity](#market-opportunity)
-10. [Client Testimonials](#client-testimonials)
-11. [FAQ](#faq)
-12. [Resources](#resources)
-13. [About Miracuves](#about-miracuves)
-
-## Live Demos
+## 🚀 Live Demos
 
 | Environment | URL | What you can test |
 |---|---|---|
-| Web Platform | [mxflix.mimeld.com](https://mxflix.mimeld.com) | Full experience in the browser |
-| Mobile App (Android) | [mas.mimeld.com](https://mas.mimeld.com) | Browse, transact, engage |
-| Admin Dashboard | [Solution page → Demo](https://miracuves.com/netflix-clone/#demo) | Users, content, plans, analytics |
+| 📱 User App (Android) | [mas.mimeld.com](https://mas.mimeld.com) | Browse, subscribe, rent, stream, watchlist |
+| 🌐 Web OTT Platform | [mxflix.mimeld.com](https://mxflix.mimeld.com) | Full viewer experience in the browser |
+| 🎥 Producer Panel | [Solution page → Demo](https://miracuves.com/netflix-clone#demo) | Upload content, track watch-minutes, revenue share |
+| 🛠️ Admin Dashboard | [Solution page → Demo](https://miracuves.com/netflix-clone#demo) | Users, content, plans, rentals, payouts, analytics |
 
-Demo credentials: [miracuves.com/netflix-clone -> Demo section](https://miracuves.com/netflix-clone/#demo)
-
-## What Makes This Netflix Clone Different
-
-<!-- TODO: fill 3-5 vertical-specific differentiators -->
-
-## Who Is This For?
-
-| Buyer Type | Use Case |
-|---|---|
-| Startup founders | Launch platform |
-| Agencies | White-label |
-| Enterprises | Custom solution |
+Demo credentials for all environments: **[miracuves.com/netflix-clone → Demo section](https://miracuves.com/netflix-clone/#demo)**
 
 ---
 
-## How It Works
+## ✨ What Makes This Netflix Clone Different
 
-1. User opens app
-2. Selects content/service
-3. Transaction completed
-4. Payment processed
-5. Confirmation sent
+Most OTT scripts stop at "watchlist + subscriptions." This platform ships with the features that actually run a streaming *business*:
 
----
+- **Producer Revenue Sharing** — third-party content creators upload through their own panel and earn by watch-minutes — turns your platform into a content marketplace, not just a library
+- **Four Monetization Models** — subscriptions (SVOD), rentals & pay-per-view (TVOD), advertising (AVOD), and premium bundles — run one or all simultaneously
+- **Content Acquisition API** — pull licensed catalogs programmatically instead of manual uploads
+- **360° VR Playback** — immersive content support out of the box
+- **Smart TV Ready** — Android TV / Fire TV / Roku / Apple TV deployment available as an add-on
 
-## Core Features
+## 📦 Core Features
 
-### User App
-- Personalized feed
-- Content creation tools
-- Social interactions
-- Messaging
-- Notifications
-- Profile management
+**Viewer:** multi-profile accounts · personalized homepage · search & filters · continue-watching · watchlist · offline downloads · multi-language subtitles · adaptive bitrate (HLS) · casting support
 
-### Creator Panel
-- Content studio
-- Analytics dashboard
-- Monetization tools
-- Fan management
+**Producer:** self-serve upload panel · content scheduling · watch-minute analytics · revenue dashboard · payout requests
 
-### Admin Panel
-- Content moderation
-- User management
-- Revenue analytics
-- Ad management
-- Security
+**Admin:** user & subscription management · content moderation · plan & pricing control · rental management · producer payouts · revenue analytics · promo codes · CMS pages
 
----
-
-## Advanced Features
-
-The platform integrates AI-powered features that reduce manual overhead and capture revenue opportunities:
-
-- **AI Engine** - Smart recommendations
-- **AI Content Recommendation** - Personalized content feed
-- **AI Moderation** - Automated content filtering
-- **AI Engagement Analytics** - Trend & performance insights
-
----
-
-## Apps and Web Panels
-
-| Module | Description |
-|---|---|
-| User App | Watch,search |
-| Admin Panel | Content,analytics |
-
----
-
-## Architecture
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
-    A[Flutter Apps<br/>Android · iOS] --> G[REST API<br/>Laravel Backend]
-    W[Web Platform<br/>Responsive] --> G
-    P[Partner Panel] --> G
-    AD[Admin Dashboard] --> G
+    A[Flutter Apps<br/>Android · iOS]
+    B[Web OTT<br/>Responsive]
+    W[Producer Panel]
+    AD[Admin Dashboard]
+    A --> G[REST API<br/>Laravel Backend]
+    B --> G
+    W --> G
+    AD --> G
     G --> DB[(MySQL)]
     G --> S3[Object Storage]
+    S3 --> CDN[Video CDN<br/>HLS Adaptive Streaming]
+    CDN --> A
+    CDN --> B
 ```
 
-**Stack:**
+**Stack:** Laravel (PHP) backend · Flutter mobile apps (single codebase, Android + iOS) · MySQL · HLS adaptive streaming via video CDN · payment gateway integrations (Stripe, PayPal, Razorpay & regional gateways)
 
-| Layer | Technology |
-|---|---|
-| Mobile | Flutter |
-| Backend | Node.js |
-| DB | MongoDB |
-| Payments | Stripe |
+## 📋 What’s Included
 
----
+- ✅ Full source code — backend, web, mobile apps, panels (no encryption, no license locks)
+- ✅ Deployment to your servers & app store submission assistance
+- ✅ Your branding — white-label rename, logo, colors, domain
+- ✅ 60 days post-launch support + 12 months of free updates
+- ✅ Documentation & handover
 
-## Revenue Streams
+**Pricing:** from **$3,699**, transparent on the [solution page](https://miracuves.com/netflix-clone/#pricing) — no "contact us for quote" games.
 
-The platform is engineered to generate revenue from day one through multiple complementary channels:
+## 🆚 Why Not Build From Scratch?
 
-- Transaction fees
-- Subscription
-- Premium features
-- Ad revenue
-- Subscription plans
-- Virtual gifts/tips
-- Premium content
-- Brand partnerships
+Custom OTT development runs $80k–$500k and 6–12 months. A proven white-label base gets you to market in 6 working days for a fraction of that, with your budget preserved for content licensing and marketing — the things that actually differentiate a streaming service.
 
----
+## 📚 Resources
 
-## Security and Compliance
+- 📖 [Netflix Clone — Full Solution Page](https://miracuves.com/netflix-clone) (features, pricing, demos, FAQ)
+- 💰 [How Much Does a Netflix-Style OTT Platform Cost in 2026?](https://miracuves.com/netflix-clone#pricing) pricing breakdown & what's included
+- 📝 [Best Netflix Clone Script in 2026: Features, Pricing & OTT Launch Guide](https://miracuves.com/netflix-clone/blog/) features, pricing & launch guide
+- 🧠 [Stop Trying to Be Netflix: Why Hyper-Niche SVOD Wins](https://miracuves.com/netflix-clone/blog/) lessons from category-leader SVODs
+- ✅ [Miracuves Facts & Claims Ledger](https://miracuves.com/netflix-clone/facts/) every claim we make, verified
 
-- OTP-based authentication
-- SSL/TLS encrypted API communication
-- GDPR-ready data handling
+## 🏢 About Miracuves
+
+[Miracuves Solutions](https://miracuves.com) builds white-label clone apps and custom software from Mumbai, India — 90+ ready-made solutions, live demos for every product, transparent pricing, and delivery in 6 working days. Operating since 2010.
+
+**Talk to us:** [WhatsApp](https://wa.me/919830009649) · [Schedule a consultation](https://miracuves.com/schedule-consultation/) · [miracuves.com](https://miracuves.com)
 
 ---
 
-## What's Included
+### ⚠️ Note on This Repository
 
-| Plan | Price | What You Get |
-|---|---|---|
-| Standard | **$$3,699** | Complete source code, all apps, admin panel, rebranding, 1 year updates |
-| Enterprise | Custom Quote | Everything in Standard + custom features, multi-region, priority support |
+This repository is a product overview. The full source code is delivered to clients on purchase — see [what’s included](https://miracuves.com/netflix-clone/#included). For a hands-on evaluation, use the live demos above; credentials are public on the solution page.
 
-**What is included:**
-
-- User App
-- Admin Panel
-- Full Source Code
-- Complete Rebranding (your logo, colors, app name)
-- Server Deployment
-- App Store and Google Play Submission Support
-- 60 Days Free Bug Support
-- Free 1-Year Updates
+*Keywords: netflix clone, netflix clone script, OTT platform development, video streaming app, white label OTT, VOD platform, SVOD AVOD TVOD, producer revenue sharing, Laravel Flutter streaming app*
 
 ---
-**Pricing:** from **$3,699** — transparent on the [solution page](https://miracuves.com/netflix-clone/#pricing).
-
-
-## Deployment Timeline
-
-| Day | Milestone |
-|---|---|
-| Day 1 | Server setup, environment configuration, initial deployment |
-| Day 2 | White-labeling - app name, logo, colors, splash screens |
-| Day 3 | Payment gateway integration + third-party API configuration |
-| Day 4 | Custom feature implementation (if applicable) |
-| Day 5 | QA, testing, bug fixes across all panels |
-| Day 6 | App Store + Google Play submission + Go-live |
-
-> **Average go-live: 6 business days from payment confirmation.**
-
----
-
-## Why Not Build From Scratch?
-
-| Factor | Build from Scratch | Miracuves Solution |
-|---|---|---|
-| Time to Launch | 6-12 months | 6 days |
-| Development Cost | $60,000-$150,000 | From $$3,699 |
-| Source Code Ownership | Yes | Yes |
-| Customization | Full | Full |
-| Post-Launch Support | Depends on team | 60 days included |
-| Risk | High | Low |
-
----
-
-## Market Opportunity
-
-| Metric | Data |
-|---|---|
-| Large Market | Growing |
-
-> Source: Statista, Grand View Research, Allied Market Research
-
----
-
-## Successful Verticals
-
-- On-demand
-- Digital platform
-- Short-form video
-- Live streaming
-- Video-on-demand
-- Social networking
-- Virtual events
-
----
-
-## Client Testimonials
-
-> *"Launched in 6 days. Exceptional quality."*
-> - Founder
-
-> *"Exceptional results from day one."*
-> - Verified Client
-
-> *"Scaled 3x faster than expected."*
-> - Startup Founder
-
----
-
-## FAQ
-
-**How much?**
-See pricing.
-
-**Source code?**
-Yes.
-
-**Launch?**
-6 days.
-
-**Can I customize the branding?**
-Yes, full white-labeling included.
-
-**Do you provide post-launch support?**
-60 days free bug support included.
-
-**Can I add custom features?**
-Yes, we accommodate custom requests.
-
----
-
-## Related Solutions
-
-Explore our other white-label clone solutions:
-
-- [Uber Clone](https://github.com/Miracuves-Solutions/uber-clone)
-
----
-
-## Resources
-
-- [Netflix clone scripts features pricing](https://miracuves.com/blog/netflix-clone-scripts-features-pricing/)
-- [Netflix clone over custom development](https://miracuves.com/blog/netflix-clone-over-custom-development/)
-- [Netflix feature list](https://miracuves.com/blog/netflix-feature-list/)
-- [White label ios build vs buy](https://miracuves.com/blog/white-label-ios-build-vs-buy/)
-- [Full Solution Page](https://miracuves.com/netflix-clone/) — features, pricing, demos, FAQ
-
-
-## Get Started
-
-**Ready to launch your OTT streaming platform?**
-
-| Channel | Link |
-|---|---|
-| Full Solution Page | [miracuves.com/netflix-clone](https://miracuves.com/netflix-clone/) |
-| Email | info@miracuves.com |
-| WhatsApp | [+91 98300 09649](https://wa.me/919830009649) |
-| Book a Call | [Free Consultation](https://miracuves.com/contact/) |
-
----
-
-## About Miracuves
-
-**Miracuves Solutions Pvt. Ltd.** is a Mumbai-based software company specializing in white-label clone app solutions across 12+ industries.
-
-- 90+ ready-to-deploy solutions
-- 6-day delivery guarantee
-- 60+ engineers on staff
-- 3,900+ apps delivered
-- Full source code ownership
-- Clients across 40+ countries including India and USA
-
-[Explore all 90+ solutions at miracuves.com](https://miracuves.com)
-
----
-
-## Disclaimer
-
-This product is independently developed by Miracuves. All product names, logos, and brands are property of their respective owners. Use of these names does not imply endorsement.
-
----
-
-<div align="center">
-
-*(c) 2026 Miracuves Solutions Pvt. Ltd. | Mumbai, India*
-*This repository contains product documentation only - no proprietary source code is published here.*
-
-</div>
-
-
-*Keywords: netflix clone, netflix script, white label solution, laravel flutter app, clone script*
-
-
-
----
-
-### Note on This Repository
-
-This repository is a product overview. The full source code is delivered to clients on purchase. For a hands-on evaluation, use the live demos above; credentials are public on the solution page.
-
 
 <!--
-=========================================================
-GENERATED FROM MIRACUVES NETFLIX-CLONE README TEMPLATE
-Canon: 6 working days, from $2,799 floor, 60 days support + 12 months updates.
-Never use 3 days. See https://miracuves.com/facts/ for audited claims.
-=========================================================
+══════════════════════════════════════════════════
+TEMPLATE VARIABLE KEY — auto-generated from Netflix-Clone pattern
+══════════════════════════════════════════════════
+{APP_NAME}        Netflix Clone
+{MX_NAME}         MXFlix
+{CATEGORY}        OTT & Video Streaming Platform
+{DEMO_WEB}        mxflix.mimeld.com
+{PRICE}           $3,699
+{SLUG}            netflix-clone
+{SOLUTION_URL}    https://miracuves.com/netflix-clone/
+{VERTICAL}        ott_streaming
+
+See /tmp/verticals/ott_streaming.txt for the vertical config used to generate this README.
+══════════════════════════════════════════════════
 -->
